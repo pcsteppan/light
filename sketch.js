@@ -6,6 +6,8 @@ let positive_slider;
 let negative_slider;
 let delta_slider;
 
+let previous_sum;
+
 let offset;
 
 function setup() {
@@ -43,9 +45,10 @@ function draw() {
 
   positive_width = positive_slider.value();
   negative_width = negative_slider.value();
+  if(previous_sum != positive_width+negative_width)
+    resizeCanvas(windowWidth, (int((windowHeight*2)/(positive_width+negative_width))+1)*(positive_width+negative_width));
 
-  resizeCanvas(windowWidth, (int((windowHeight*2)/(positive_width+negative_width))+1)*(positive_width+negative_width));
-
+  previous_sum = negative_width + positive_width
   offset += (deltaTime/70)*delta_slider.value();
   // console.log(offset);
   //console.log("pos: " + positive_width);
