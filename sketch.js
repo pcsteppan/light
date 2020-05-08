@@ -44,6 +44,8 @@ function draw() {
   positive_width = positive_slider.value();
   negative_width = negative_slider.value();
 
+  resizeCanvas(windowWidth, (int((windowHeight*2)/(positive_width+negative_width))+1)*(positive_width+negative_width));
+
   offset += (deltaTime/70)*delta_slider.value();
   // console.log(offset);
   //console.log("pos: " + positive_width);
@@ -58,5 +60,5 @@ function draw() {
 }
 
 function windowResized() {
-  resizeCanvas(windowWidth-3, windowHeight-3);
+  resizeCanvas(windowWidth, (int((windowHeight*2)/(positive_width+negative_width)))*(positive_width+negative_width));
 }
