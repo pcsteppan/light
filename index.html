@@ -9,7 +9,12 @@
   </head>
   <body>
     <div id="controls">
+      <span>sideways?</span>
+      <input type="checkbox" id="rotate" unchecked/>
     </div>
+    <button id="controls--toggle">
+      hide
+    </button>
   </body>
   <style>
     * {
@@ -38,5 +43,36 @@
       color: white;
       font-family: monospace;
     }
+    #controls--toggle{
+      position:absolute;
+      z-index: 3;
+      bottom:0;
+      right: 0;
+      width: 4rem;
+      background-color: black;
+      color: white;
+      border: 0px solid white;
+    }
+    .sideways{
+      transform: translateY(50vh) translateX(-50vw) rotate(-90deg);
+    }
+    .dn{
+      display: none;
+    }
   </style>
+  <script>
+    let b_rotate = document.getElementById("rotate");
+    let b_hide = document.getElementById("controls--toggle");
+    let controls = document.getElementById("controls");
+    
+    b_rotate.addEventListener("click", () => {
+      let canvas = document.getElementsByTagName("canvas")[0];
+      canvas.classList.toggle("sideways", b_rotate.checked);
+    });
+
+    b_hide.addEventListener("click", () => {
+      controls.classList.toggle("dn");
+      b_hide.innerText = (b_hide.innerText=="hide")?"show":"hide";
+    })
+  </script>
 </html>
