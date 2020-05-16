@@ -31,7 +31,7 @@ function setup() {
   control_panel = document.getElementById("controls");
   
   createElement("p", "width").parent(control_panel)
-  positive_slider = createSlider(0, 100, 70, 0.001);
+  positive_slider = createSlider(0, 1000, 90, 0.001);
   positive_slider.parent(control_panel);
   positive_slider.style('width', '100%');
 
