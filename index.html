@@ -9,8 +9,8 @@
   </head>
   <body>
     <div id="controls">
-      <span>sideways?</span>
-      <input type="checkbox" id="rotate" unchecked/>
+      <!-- <span>sideways?</span>
+      <input type="checkbox" id="rotate" unchecked/> -->
     </div>
     <button id="controls--toggle">
       hide
@@ -28,7 +28,7 @@
     }
     canvas{
       position:absolute;
-      top: -100vh;
+      /* top: -100vh; */
       left: 0;
     }
     #controls{
@@ -61,14 +61,14 @@
     }
   </style>
   <script>
-    let b_rotate = document.getElementById("rotate");
+    //let b_rotate = document.getElementById("rotate");
     let b_hide = document.getElementById("controls--toggle");
     let controls = document.getElementById("controls");
     
-    b_rotate.addEventListener("click", () => {
-      let canvas = document.getElementsByTagName("canvas")[0];
-      canvas.classList.toggle("sideways", b_rotate.checked);
-    });
+    // b_rotate.addEventListener("click", () => {
+    //   let canvas = document.getElementsByTagName("canvas")[0];
+    //   canvas.classList.toggle("sideways", b_rotate.checked);
+    // });
 
     b_hide.addEventListener("click", () => {
       controls.classList.toggle("dn");
